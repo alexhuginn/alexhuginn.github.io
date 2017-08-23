@@ -1,6 +1,7 @@
 html,
 body,
-header {
+header,
+.container-fluid {
    height: 100%;
 }
 
@@ -113,7 +114,8 @@ header p {
 
 .upper-pic ,
 .lower-pic {
-	background: url("upper-pic.jpg") 0 0 / cover fixed #EEE;
+	background: url("../images/background.jpg") fixed #EEE;
+	background-size: cover;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -121,9 +123,10 @@ header p {
 
 .upper-pic p,
 .lower-pic p {
+	color: #FFF;
 	font-size: 7em;
 	margin: auto;
-	color: #414141;
+	
 }
 
 .upper,
@@ -144,8 +147,14 @@ header p {
 	right: 5%;
 }
 
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
 #work {
-	background: #EEE;
+	background: url("../images/background-work.jpg") #EEE;
+	background-size: cover;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -211,28 +220,50 @@ img {
 	font-size: 1.125em;
 }
 
+#about figure {
+	height: 90%;
+}
+
+#about img {
+    width: auto;
+    max-height: 100%;
+}
+
 #contact {
 	color: #414141;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	background: #EEE;
+	background: url("../images/background-contact.jpg") #EEE;
+	background-size: cover;
 	min-height: 500px;
 	height: 88%;
 	font-size: 1.75em;
 	line-height: 50px;
-	padding: 0 5%;
 	width: 100%;
 }
 
+#contact .row {
+	padding: 0 10%;
+	width: 100%;
+} 
+
 #contact p {
 	font-size: 1em;
-	width: 40%;
 }
 
 #contact span {
 	display: flex;
-	justify-content: space-around;
+}
+
+#contact i {
+	padding-right: 30px;
+	transition: .5s all ease-out;
+}
+
+#contact i:hover {
+	font-size: 1.25em;
+	text-shadow: 0 0 8px #FF5959;
 }
 
 #contact a,
@@ -242,11 +273,6 @@ img {
 #contact a:active {
 	color: #414141;
 	text-decoration: none;
-}
-
-
-form {
-	width: 40%;
 }
 
 form .form-group {
@@ -267,13 +293,14 @@ form .form-group:first-child {
 	display: block;
 	clear: both;
 	padding-right: 0;
-	width: 80%;
+	width: 100%;
 	margin-right: 20px;
 }
 
 .form-group .form-control:focus {
 	background-color: #EEE;
 	border-color: #EEE;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px #FF5959;
 }
 
 .form-control::-webkit-input-placeholder {color: #EEE;}
@@ -307,7 +334,7 @@ footer {
 	align-items: center;
 	justify-content: center;
 	font-size: 0.75em;
-	height: 12%;
+	height: 13%;
 	min-height: 70px;
 	text-align: center;
 	width: 100%;
@@ -316,7 +343,6 @@ footer {
 footer p {
 	font-size: 1.5em;
 }
-
 
 
 .back {
