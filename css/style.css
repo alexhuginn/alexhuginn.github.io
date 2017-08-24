@@ -11,13 +11,15 @@ footer {
 	clear: both;
 }
 
-::selection {
-	background: #FF5959;
-}
+::selection {background: #FF5959;}
+::-moz-selection {background: #FF5959;}
 
-::-moz-selection {
-	background: #FF5959;
-}
+
+h1 {font-size: 4em;}
+
+h2 {font-size: 3.5em;}
+
+p {font-size: 2em;}
 
 a,
 a:link,
@@ -34,15 +36,9 @@ body {
 	padding-top: 55px;
 }
 
-h1 {font-size: 4em;}
-
-h2 {font-size: 3.5em;}
-
-p {font-size: 2em;}
-
 .logo {
 	border-left: 2px solid #FF5959;
-	color: #FF5959;
+	color: #FF7A7A;
 	font-size: 1em;
 	line-height: 1em;
 	padding-left: 2px;
@@ -70,7 +66,6 @@ nav ul {
 	margin-bottom: 0;
 }
 
-
 nav li {
 	list-style: none;
     display: inline-block;
@@ -96,13 +91,9 @@ nav a:active {
 	text-decoration: none;
 }
 
-nav a:hover {
-	border-bottom: 3px solid #5F5F5F;
-}
+nav a:hover {border-bottom: 3px solid #5F5F5F;}
 
-nav li.active a {
-	border-bottom: 3px solid #EEE;
-}
+nav li.active a {border-bottom: 3px solid #EEE;}
 
 header {
 	min-height: 500px;
@@ -114,9 +105,7 @@ header .right-item  {
 	height: 50%;
 }
 
-header p {
-	position: absolute;
-}
+header p {position: absolute;}
 
 .upper-pic ,
 .lower-pic {
@@ -174,16 +163,15 @@ header p {
 }
 
 #work img {
+	cursor: pointer;
 	padding: 5% 5% 7%;
 }
 
 figcaption {
-	padding-bottom: 5%;
+	font-size: 1.4em;
+	font-weight: bold;
+	padding: 0 5% 5%;
 	text-align: center;
-}
-
-img {
-	margin: 0 auto;
 }
 
 #about {
@@ -221,21 +209,15 @@ img {
 	text-align: justify;
 }
 
-#about figure {
-	margin: 0 auto;
-}
+#about figure {margin: 0 auto;}
 
-#about .row div {
-	margin: auto;
-}
+#about .row div {margin: auto;}
 
 #about .resume {
 	font-size: 1.25em;
 	text-align: center;
 	padding-bottom: 20px;
 }
-
-
 
 #about img {
     width: auto;
@@ -273,9 +255,7 @@ img {
 	width: 50%;
 }
 
-#contact i {
-	transition: .5s all ease-out;
-}
+#contact i {transition: .5s all ease-out;}
 
 #contact i:hover {
 	font-size: 1.25em;
@@ -297,9 +277,7 @@ form .form-group {
 	position: relative;
 }
 
-form .form-group:first-child {
-	margin-top: 30px;
-}
+form .form-group:first-child {margin-top: 30px;}
 
 .form-group .form-control {
 	background-color: #BEBEBE;
@@ -356,8 +334,16 @@ footer {
 	width: 100%;
 }
 
-footer p {
-	font-size: 1.5em;
+footer p {font-size: 1.5em;}
+
+.modal-body {display: flex;}
+
+.content {margin: auto;}
+
+.content img {
+	display: block;
+	height: auto;
+	max-width: 100%;
 }
 
 @media only screen and (max-width: 991px) {
@@ -366,9 +352,7 @@ footer p {
 		font-size: 6em;
 	}
 	
-	#about .row {
-		display: block;
-	}
+	#about .row {display: block;}
 	
 	#about figure {
 		margin: 0 25% 0 25%;
@@ -377,32 +361,25 @@ footer p {
 }
 
 @media only screen and (max-width: 550px) {
-	.logo {
-		display: none;
-	}
-	
-	
-	nav a {
-		font-size: 0.9em;
-	}
-	
-	.upper-pic p,
-	.lower-pic p {
-		font-size: 3em;
-	}
+	.logo {display: none;}
+		
+	nav a {font-size: 0.9em;	}
 	
 	.upper,
 	.lower {
 		font-size: 0.75em;
 	}
-	
-	.about-title p {
-		font-size: 2em;
+
+	.upper-pic p,
+	.lower-pic p {
+		font-size: 3em;
 	}
 	
-	#about .row {
-		font-size: 0.6em;
-	}
+	figcaption {font-size: 0.8em;}
+	
+	#about .row {font-size: 0.6em;}
+	
+	.about-title p {font-size: 2em;}
 	
 	#contact {
 		height: auto;
@@ -410,8 +387,6 @@ footer p {
 		line-height: 30px;
 	}
 	
-	#contact p {
-		font-size: 0.75em;
-	}
+	#contact p {font-size: 0.75em;}
 
 }
