@@ -19,7 +19,8 @@ const files = {
   jsPath: './app/js/script.js',
   htmlPath: './app/index.html',
   imgPath: './app/images/**/*.+(png|jpg|jpeg|gif|svg)',
-  faviconPath: './app/favicon.ico'
+  faviconPath: './app/*.ico',
+  docPath: './app/doc'
 }
 
 function cssTask() {
@@ -51,19 +52,20 @@ function htmlTask() {
       collapseWhitespace: true,
       removeComments: true
     })))
-    .pipe(dest('./dist'))
+    .pipe(dest('./'))
 }
 
 function imgTask() {
   return src(files.imgPath)
     .pipe(imagemin())
-    .pipe(dest('./dist/images'))
+    .pipe(dest('./images'))
 }
 
-function copyIconTask() {
-  return src(files.faviconPath)
-    .pipe(dest('./dist'))
+function copyTask() {
+  return src([files.faviconPath, files.docPath])
+    .pipe(dest('./'))
 }
+
 
 function watchTask() {
   watch(
@@ -81,9 +83,9 @@ exports.default = series(
   watchTask
 );
 
-exports.clean = del.bind(null, ['dist']);
+exports.clean = del.bind(null, ['css', 'doc', 'images', 'js', 'index.html', 'favicon.ico']);
 
 exports.build = series(
-  parallel(cssTask, jsTask, imgTask, copyIconTask),
+  parallel(cssTask, jsTask, imgTask, copyTask),
   htmlTask
 );
