@@ -51,5 +51,7 @@ $(window).scroll(function(){
 
 $("#work img").click(function() {
 	let img = $(this).clone();
+	const regex = /png/;
+  img[0].src = img[0].src.replace(regex, '2x.png');
 	$(".content").html(img);
 });

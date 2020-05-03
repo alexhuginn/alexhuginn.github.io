@@ -159,6 +159,8 @@ header p {position: absolute;}
 
 #work img {
 	cursor: pointer;
+  display:block;
+  margin:auto;
 	padding: 5% 5% 7%;
 	transition: .3s all ease-out;
 }
